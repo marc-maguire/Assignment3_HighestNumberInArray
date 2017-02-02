@@ -14,20 +14,17 @@
 - (int)highestNumberInArray:(NSArray *)array
 {
 
-    int highestNumber = [array[0] intValue];
-    int nextNumber = 1;
-    
-    while (nextNumber <= array.count-1) {
-        if (highestNumber > [array[nextNumber] intValue]) {
-            nextNumber++;
-
-        } else {
-            highestNumber = [array[nextNumber] intValue];
-            nextNumber++;
+    int highestNumber = 0;
+    int i = 0;
+   
+    for (i = 0; i < array.count; i++) {
+        int index = [array[i] intValue];
+        
+        if (highestNumber < index) {
+            highestNumber = index;
         }
     }
 
-    //NSLog(@"The highest number is %d!\n", highestNumber);
     return highestNumber;
 }
 
