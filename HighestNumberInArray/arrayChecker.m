@@ -11,24 +11,25 @@
 
 @implementation arrayChecker
 
-- (float)highestNumberInArray:(NSArray *)array
+- (int)highestNumberInArray:(NSArray *)array
 {
-    //NSNumber *highestNumber = [[NSNumber alloc]initWithInt:[array[0]]];
-    int highestNumber = (int)array[0];
+
+    int highestNumber = [array[0] intValue];
     int nextNumber = 1;
     
     while (nextNumber <= array.count-1) {
-        if (highestNumber > (int)array[nextNumber]) {
+        if (highestNumber > [array[nextNumber] intValue]) {
             nextNumber++;
+
         } else {
-            highestNumber = (int)array[nextNumber];
+            highestNumber = [array[nextNumber] intValue];
             nextNumber++;
         }
     }
-    
-    NSLog(@"The highest number is %d!\n", highestNumber);
+
+    //NSLog(@"The highest number is %d!\n", highestNumber);
     return highestNumber;
-    
 }
 
 @end
+//lesson here is that you cannot compare NSNumbers in an array without converting them, if you do not convert (which is why this didn't work the first couple times) you will be comparing pointer values, and those suckers are weird numbers.

@@ -10,8 +10,7 @@
 
 @interface arrayChecker : NSObject
 
-- (float)highestNumberInArray:(NSArray *)array;
-
+- (int)highestNumberInArray:(NSArray *)array;
 
 @end
 
