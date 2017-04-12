@@ -13,7 +13,7 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
 
         arrayChecker *marcsChecker = [[arrayChecker alloc]init];
-        int highestNumber = [marcsChecker highestNumberInArray:@[@111, @2, @3,@400000]];
+        int highestNumber = [marcsChecker highestNumberInArray:@[@111, @2, @3,@40]];
         NSLog(@"The highest number in the example is: %d!\n",highestNumber);
         
     }
